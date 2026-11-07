@@ -9,96 +9,110 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
-            background-color: #f4f7f6;
+            margin: 0;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
+            background: linear-gradient(135deg, #eafaf1, #dfeeff);
+            padding: 20px;
         }
+
         .form-container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 400px;
+            max-width: 430px;
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(15, 76, 92, 0.15);
+            padding: 30px 28px;
         }
+
         .form-container h2 {
-            margin-bottom: 20px;
-            color: #333;
+            margin: 0 0 20px;
             text-align: center;
-            font-size: 24px;
+            color: #1d3557;
+            font-size: 28px;
         }
+
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
+
         label {
             display: block;
-            margin-bottom: 5px;
-            color: #666;
+            margin-bottom: 8px;
+            color: #334e68;
             font-weight: 600;
             font-size: 14px;
         }
-        input[type="text"] {
+
+        input[type="text"],
+        input[type="tel"] {
             width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 12px 14px;
             font-size: 14px;
-            transition: border-color 0.3s ease;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            background: #f8fafc;
+            transition: 0.2s ease;
         }
-        input[type="text"]:focus {
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus {
             outline: none;
-            border-color: #4cae4c;
+            border-color: #2f80ed;
+            box-shadow: 0 0 0 4px rgba(47, 128, 237, 0.12);
+            background: #fff;
         }
-        input[type="submit"] {
+
+        .btn-submit {
             width: 100%;
-            padding: 12px;
-            background-color: #5cb85c;
             border: none;
-            border-radius: 5px;
-            color: white;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #2f80ed, #1e88e5);
+            color: #ffffff;
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 700;
+            padding: 13px 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 8px 18px rgba(47, 128, 237, 0.25);
         }
-        input[type="submit"]:hover {
-            background-color: #4cae4c;
+
+        .btn-submit:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(47, 128, 237, 0.3);
         }
     </style>
 </head>
 <body>
+    <div class="form-container">
+        <h2>Form Data Diri</h2>
+        <form method="post" action="tampil.php">
+            <div class="form-group">
+                <label for="nama">Masukkan Nama</label>
+                <input type="text" id="nama" name="nama" placeholder="Contoh: Arfa" required>
+            </div>
 
-<div class="form-container">
-    <h2>Form Data Diri</h2>
-    <form method="get" action="tampil.php"> 
-        <div class="form-group">
-            <label>Masukkan Nama</label>
-            <input type="text" name="nama" placeholder="Contoh: Arfa" required>
-        </div>
-        
-        <div class="form-group">
-            <label>Masukkan Alamat</label>
-            <input type="text" name="alamat" placeholder="Contoh: Banten" required>
-        </div>
-        
-        <div class="form-group">
-            <label>Masukkan No. WA</label>
-            <input type="text" name="nowa" placeholder="Contoh: 0812xxxxxxxx" required>
-        </div>
-        
-        <div class="form-group">
-            <label>Masukkan Status</label>
-            <input type="text" name="status" placeholder="Contoh: Mahasiswa" required>
-        </div>
-        
-        <input type="submit" value="Kirim Data"> 
-    </form>
-</div>
+            <div class="form-group">
+                <label for="alamat">Masukkan Alamat</label>
+                <input type="text" id="alamat" name="alamat" placeholder="Contoh: Banten" required>
+            </div>
 
+            <div class="form-group">
+                <label for="nowa">Masukkan No. WA</label>
+                <input type="tel" id="nowa" name="nowa" placeholder="Contoh: 0812xxxxxxxx" required>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Masukkan Status</label>
+                <input type="text" id="status" name="status" placeholder="Contoh: Mahasiswa" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Kirim Data</button>
+        </form>
+    </div>
 </body>
 </html>
